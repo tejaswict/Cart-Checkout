@@ -48,25 +48,28 @@ The system starts with the following product catalog:
    cd checkout-system
 
 2. **Clone the Repository**
-tox -vv
-source .tox/py311/bin/activate
+   ```bash
+    tox -vv
+    source .tox/py311/bin/activate
 
-3.  **Configure Database**
+4.  **Configure Database**
 
-Update your database connection string in the alembic.ini file or environment variables. Your PostgreSQL connection URL should look like this:
+    Update your database connection string in the alembic.ini file or environment variables. Your PostgreSQL connection URL should look like this:
+    ```bash
+    postgresql://username:password@localhost:5432/products
 
-postgresql://username:password@localhost:5432/products
+5. **Run Alembic Migrations**
 
-4. **Run Alembic Migrations**
+    Create the database schema using Alembic
 
-Create the database schema using Alembic
+6. **Run Tests**
+    ```bash
+  
+    pytest tests/test_checkout.py
 
-5. **Run Tests ** 
+7. **Run Sample run**
 
-pytest tests/test_checkout.py
-
-6. **Run Project**
-
-Sample runner is given which validates the cart functionality.
-
-python Sample_run.py
+    Sample runner is given which validates the cart functionality.
+    ```bash
+  
+      python Sample_run.py
